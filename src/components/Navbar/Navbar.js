@@ -1,36 +1,52 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import {Navbar,Container,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
+import logo from '../../assets/img/logo.png'
 
-import {Navbar,Nav,NavDropdown,Container} from 'react-bootstrap'
 
-
-
-function NavbarSection() {
-  return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="#features">home</Nav.Link>
-        <Nav.Link href="#pricing">link</Nav.Link>
-        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
+export default function NavbarComponent(props) {
+    // console.log(props)
+    return (
+        <div>
+            <Navbar  expand="lg">
+  <Container fluid>
+    <Navbar.Brand href="#"><img src={logo} width="100px"/></Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav
+        className="me-auto my-2 my-lg-0"
+        style={{ maxHeight: '100px' }}
+        navbarScroll
+      >
+          <Link to="/">Home</Link>
+         
+    
+          <Link to="/Movies">Movies</Link>
+        
       </Nav>
-      <Nav>
-        <Nav.Link href="#deets">More deets</Nav.Link>
-        <Nav.Link eventKey={2} href="#memes">
-          Dank memes
-        </Nav.Link>
-      </Nav>
+      <Form className="d-flex">
+       
+        
+        
+      </Form>
+      <div className="" >
+              <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    type="button"
+                    width="60"
+                    height="60"
+                    fill="red"
+                    class="bi bi-heart-fill  "
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                    />
+                  </svg></div>
     </Navbar.Collapse>
-    </Container>
-  </Navbar>
-  );
+  </Container>
+</Navbar>
+        </div>
+    )
 }
-
-export default NavbarSection;
